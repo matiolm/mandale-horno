@@ -1,0 +1,45 @@
+@use 'variables' as *;
+
+.productos {
+  .pizzas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $espaciado-l;
+
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pizza-card {
+    background-color: $color-card;
+    border-radius: $radio-borde;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba($color-primario, 0.2);
+    }
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    &-info {
+      padding: $espaciado-m;
+
+      h3 {
+        margin-bottom: $espaciado-s;
+        font-size: 1.4rem;
+      }
+
+      p {
+        color: $color-texto-suave;
+        line-height: 1.5;
+      }
+    }
+  }
+}

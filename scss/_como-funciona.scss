@@ -1,0 +1,90 @@
+@use 'variables' as *;
+
+.pasos {
+  text-align: center;
+
+  h2 {
+    @extend %titulo-seccion;
+  }
+
+  &-grid {
+    display: flex;
+    gap: $espaciado-l;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include responsive(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.paso {
+  @include card-base;
+  flex: 1;
+  min-width: 220px;
+  max-width: 320px;
+
+  @include responsive(mobile) {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &-numero {
+    width: 60px;
+    height: 60px;
+    background-color: $color-primario;
+    border-radius: 50%;
+    @include flex-center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto $espaciado-m;
+    color: #fff;
+  }
+
+  h3 {
+    margin-bottom: $espaciado-s;
+    font-size: 1.4rem;
+  }
+
+  p {
+    color: $color-texto-suave;
+  }
+}
+
+.consejos {
+  background-color: #000;
+  text-align: center;
+
+  h2 {
+    @extend %titulo-seccion;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: $espaciado-m;
+
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.consejo {
+  @include card-base;
+  border-left: 3px solid $color-primario;
+  text-align: left;
+
+  h3 {
+    font-size: 1rem;
+    color: $color-texto;
+    margin-bottom: $espaciado-s;
+  }
+
+  p {
+    color: $color-texto-suave;
+    font-size: 0.9rem;
+  }
+}

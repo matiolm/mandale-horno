@@ -1,0 +1,88 @@
+@use 'variables' as *;
+
+.historia {
+  &-content {
+    display: flex;
+    gap: $espaciado-xl;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include responsive(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &-texto {
+    flex: 1;
+    min-width: 280px;
+
+    h2 {
+      @extend %titulo-seccion;
+      text-align: left;
+    }
+
+    p {
+      color: $color-texto-suave;
+      margin-bottom: $espaciado-m;
+      line-height: 1.8;
+    }
+  }
+
+  &-imagen {
+    flex: 1;
+    min-width: 280px;
+
+    img {
+      width: 100%;
+      border-radius: $radio-borde;
+      border: 2px solid $color-primario;
+    }
+  }
+}
+
+.valores {
+  background-color: #000;
+  text-align: center;
+
+  h2 {
+    @extend %titulo-seccion;
+  }
+
+  &-grid {
+    display: flex;
+    gap: $espaciado-l;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include responsive(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.valor {
+  @include card-base;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  border-top: 3px solid $color-primario;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    margin-bottom: $espaciado-s;
+  }
+
+  p {
+    color: $color-texto-suave;
+  }
+
+  @include responsive(mobile) {
+    max-width: 100%;
+    width: 100%;
+  }
+}

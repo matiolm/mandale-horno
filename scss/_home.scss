@@ -1,0 +1,146 @@
+@use 'variables' as *;
+
+// Hero
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/pizza-surtido.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  .container {
+    @include flex-center;
+    flex-direction: column;
+    gap: $espaciado-l;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: $color-texto-suave;
+  }
+
+  @include responsive(tablet) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.1rem; }
+  }
+
+  @include responsive(mobile) {
+    min-height: 60vh;
+    h1 { font-size: 1.8rem; }
+    p { font-size: 1rem; }
+  }
+}
+
+// Botón
+.btn {
+  display: inline-block;
+  background-color: $color-primario;
+  color: #fff;
+  padding: $espaciado-s $espaciado-l;
+  border-radius: $radio-borde;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $color-secundario;
+    color: #fff;
+  }
+}
+
+// Beneficios
+.beneficios {
+  text-align: center;
+
+  h2 {
+    @extend %titulo-seccion;
+  }
+
+  &-grid {
+    display: flex;
+    gap: $espaciado-l;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.beneficio {
+  @include card-base;
+  border-top: 3px solid $color-primario;
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+
+  h3 {
+    margin-bottom: $espaciado-s;
+  }
+
+  p {
+    color: $color-texto-suave;
+  }
+}
+
+// Destacados
+.destacados {
+  text-align: center;
+
+  h2 {
+    @extend %titulo-seccion;
+  }
+}
+
+.pizzas-grid {
+  display: flex;
+  gap: $espaciado-l;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: $espaciado-l;
+
+  @include responsive(mobile) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.pizza-card {
+  background-color: $color-card;
+  border-radius: $radio-borde;
+  overflow: hidden;
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  h3 {
+    padding: $espaciado-m $espaciado-m $espaciado-s;
+  }
+
+  p {
+    padding: 0 $espaciado-m $espaciado-m;
+    color: $color-texto-suave;
+  }
+
+  @include responsive(mobile) {
+    max-width: 100%;
+    width: 100%;
+  }
+}

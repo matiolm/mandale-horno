@@ -1,0 +1,48 @@
+@use 'variables' as *;
+
+footer {
+  background-color: #000;
+  border-top: 2px solid $color-primario;
+  padding: $espaciado-l 0;
+  text-align: center;
+
+  .container {
+    @include flex-center;
+    flex-direction: column;
+    gap: $espaciado-m;
+  }
+
+  .footer-logo {
+    img {
+      height: 50px;
+      width: auto;
+    }
+  }
+
+  .footer-links {
+    display: flex;
+    gap: $espaciado-l;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-primario;
+      }
+    }
+
+    @include responsive(mobile) {
+      gap: $espaciado-m;
+    }
+  }
+
+  .footer-copy {
+    color: $color-texto-suave;
+    font-size: 0.8rem;
+  }
+}

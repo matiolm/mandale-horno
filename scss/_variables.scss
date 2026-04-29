@@ -1,0 +1,62 @@
+// Colores
+$color-fondo: #1a1a1a;
+$color-primario: #e8820c;
+$color-secundario: #c0392b;
+$color-texto: #f5f0e8;
+$color-texto-suave: #b0a898;
+$color-card: #2a2a2a;
+
+// Tipografía
+$fuente-titulo: 'Playfair Display', serif;
+$fuente-cuerpo: 'Lato', sans-serif;
+
+// Espaciados
+$espaciado-s: 0.5rem;
+$espaciado-m: 1rem;
+$espaciado-l: 2rem;
+$espaciado-xl: 4rem;
+
+// Bordes
+$radio-borde: 8px;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $mobile) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $desktop) { @content; }
+  }
+}
+
+@mixin card-base {
+  background-color: $color-card;
+  border-radius: $radio-borde;
+  padding: $espaciado-m;
+}
+
+// Extend
+%titulo-seccion {
+  font-family: $fuente-titulo;
+  color: $color-primario;
+  margin-bottom: $espaciado-l;
+  text-align: center;
+}

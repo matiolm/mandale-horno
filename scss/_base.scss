@@ -1,0 +1,61 @@
+@use 'variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: $fuente-cuerpo;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: $fuente-titulo;
+  color: $color-primario;
+}
+
+a {
+  color: $color-texto;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primario;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $espaciado-m;
+}
+
+section {
+  padding: $espaciado-xl 0;
+}
+
+.page-hero {
+  background-color: #000;
+  text-align: center;
+  padding: $espaciado-xl 0;
+  border-bottom: 2px solid $color-primario;
+
+  h1 {
+    @extend %titulo-seccion;
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: $color-texto-suave;
+    font-size: 1.1rem;
+  }
+}
